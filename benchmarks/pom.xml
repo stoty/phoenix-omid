@@ -49,6 +49,11 @@
             <artifactId>omid-codahale-metrics</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <!--downstream only dependency, see: CDPD-46973-->
+            <groupId>org.cloudera.logredactor</groupId>
+            <artifactId>logredactor</artifactId>
+        </dependency>
         <!-- End of Dependencies on Omid modules -->
 
         <!-- utils -->

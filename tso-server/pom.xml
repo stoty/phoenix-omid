@@ -258,6 +258,11 @@
             <artifactId>curator-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <!--downstream only dependency, see: CDPD-46973-->
+            <groupId>org.cloudera.logredactor</groupId>
+            <artifactId>logredactor</artifactId>
+        </dependency>
 
         <!-- end testing -->
 
