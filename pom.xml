@@ -151,14 +151,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- 3rd-Party Library Versioning -->
-        <hbase.version>2.4.17.7.3.2.0-SNAPSHOT</hbase.version>
+        <hbase.version>2.6.1.7.3.2.0-SNAPSHOT</hbase.version>
         <hadoop.version>3.1.1.7.3.2.0-SNAPSHOT</hadoop.version>
         <phoenix.thirdparty.version>2.1.0.7.3.2.0-SNAPSHOT</phoenix.thirdparty.version>
         <guice.version>5.1.0</guice.version>
         <testng.version>6.10</testng.version>
         <slf4j.version>1.7.36</slf4j.version>
         <log4j2.version>2.18.0</log4j2.version>
-        <netty4.version>4.1.100.Final</netty4.version>
+        <netty4.version>4.1.119.Final</netty4.version>
         <!-- com.google repo will be used except on Aarch64 platform. -->
         <protobuf.group>com.google.protobuf</protobuf.group>
         <protobuf-java.version>2.5.0</protobuf-java.version>
