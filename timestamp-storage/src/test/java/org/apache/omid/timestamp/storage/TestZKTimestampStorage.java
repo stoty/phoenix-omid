@@ -24,6 +24,7 @@ import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.apache.curator.test.TestingServer;
 import org.apache.curator.utils.CloseableUtils;
 import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.DummyWatcher;
 import org.apache.zookeeper.data.Stat;
 import org.mockito.Mockito;
 import org.slf4j.Logger;
@@ -223,7 +224,7 @@ public class TestZKTimestampStorage {
         // Cut the session in the server through the client
         long sessionId = zkClient.getZookeeperClient().getZooKeeper().getSessionId();
         byte[] sessionPasswd = zkClient.getZookeeperClient().getZooKeeper().getSessionPasswd();
-        ZooKeeper zk = new ZooKeeper(ZK_CLUSTER, 1000, null, sessionId, sessionPasswd);
+        ZooKeeper zk = new ZooKeeper(ZK_CLUSTER, 1000, DummyWatcher.INSTANCE, sessionId, sessionPasswd);
         zk.close();
         LOG.info("ZKClient session closed");
 

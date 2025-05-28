@@ -154,6 +154,7 @@
         <hbase.version>2.6.1.7.3.2.0-SNAPSHOT</hbase.version>
         <hadoop.version>3.1.1.7.3.2.0-SNAPSHOT</hadoop.version>
         <phoenix.thirdparty.version>2.1.0.7.3.2.0-SNAPSHOT</phoenix.thirdparty.version>
+        <zookeeper.version>3.8.1.7.3.2.0-SNAPSHOT</zookeeper.version>
         <guice.version>5.1.0</guice.version>
         <testng.version>6.10</testng.version>
         <slf4j.version>1.7.36</slf4j.version>

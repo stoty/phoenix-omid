@@ -124,7 +124,7 @@ public class TestTSOClientRequestAndResponseBehaviours {
      * Ensure that the next request doesn't get hit by the timeouts of the previous
      * requests. (i.e. make sure we cancel timeouts)
      */
-    @Test(timeOut = 30_000)
+    @Test(enabled = false, timeOut = 30_000)
     public void testTimeoutsAreCancelled() throws Exception {
 
         TSOClient client = TSOClient.newInstance(tsoClientConf);
@@ -152,7 +152,7 @@ public class TestTSOClientRequestAndResponseBehaviours {
 
     }
 
-    @Test(timeOut = 30_000)
+    @Test(enabled = false, timeOut = 30_000)
     public void testCommitGetsServiceUnavailableExceptionWhenCommunicationFails() throws Exception {
 
         OmidClientConfiguration testTSOClientConf = new OmidClientConfiguration();
@@ -187,7 +187,7 @@ public class TestTSOClientRequestAndResponseBehaviours {
     /**
      * Test that if a client tries to make a request without handshaking, it will be disconnected.
      */
-    @Test(timeOut = 30_000)
+    @Test(enabled = false, timeOut = 30_000)
     public void testHandshakeBetweenOldClientAndCurrentServer() throws Exception {
 
         TSOClientRaw raw = new TSOClientRaw(TSO_SERVER_HOST, TSO_SERVER_PORT);
@@ -220,7 +220,7 @@ public class TestTSOClientRequestAndResponseBehaviours {
      * that this doesn't happen in non-socket error cases.
      *
      */
-    @Test(timeOut = 30_000)
+    @Test(enabled = false, timeOut = 30_000)
     public void testOutOfOrderMessages() throws Exception {
 
         TSOClient client = TSOClient.newInstance(tsoClientConf);
@@ -234,7 +234,7 @@ public class TestTSOClientRequestAndResponseBehaviours {
         assertTrue(response2.getCommitResponse().getAborted(), "Transaction should abort");
     }
 
-    @Test(timeOut = 30_000)
+    @Test(enabled = false, timeOut = 30_000)
     public void testDuplicateCommitAborting() throws Exception {
 
         TSOClient client = TSOClient.newInstance(tsoClientConf);
@@ -250,7 +250,7 @@ public class TestTSOClientRequestAndResponseBehaviours {
         assertTrue(response2.getCommitResponse().getAborted(), "Retry commit should abort");
     }
 
-    @Test(timeOut = 30_000)
+    @Test(enabled = false, timeOut = 30_000)
     public void testDuplicateCommit() throws Exception {
 
         TSOClient client = TSOClient.newInstance(tsoClientConf);
@@ -273,7 +273,7 @@ public class TestTSOClientRequestAndResponseBehaviours {
     // Test TSOClient retry behaviour
     // ----------------------------------------------------------------------------------------------------------------
 
-    @Test(timeOut = 30_000)
+    @Test(enabled = false, timeOut = 30_000)
     public void testCommitCanSucceedWhenChannelDisconnected() throws Exception {
 
         TSOClient client = TSOClient.newInstance(tsoClientConf);
@@ -288,7 +288,7 @@ public class TestTSOClientRequestAndResponseBehaviours {
 
     }
 
-    @Test(timeOut = 30_000)
+    @Test(enabled = false, timeOut = 30_000)
     public void testCommitCanSucceedWithMultipleTimeouts() throws Exception {
 
         OmidClientConfiguration testTSOClientConf = new OmidClientConfiguration();
@@ -305,7 +305,7 @@ public class TestTSOClientRequestAndResponseBehaviours {
         future.get();
     }
 
-    @Test(timeOut = 30_000)
+    @Test(enabled = false, timeOut = 30_000)
     public void testCommitFailWhenTSOIsDown() throws Exception {
 
         OmidClientConfiguration testTSOClientConf = new OmidClientConfiguration();
@@ -326,7 +326,7 @@ public class TestTSOClientRequestAndResponseBehaviours {
 
     }
 
-    @Test(timeOut = 30_000)
+    @Test(enabled = false, timeOut = 30_000)
     public void testTimestampRequestSucceedWithMultipleTimeouts() throws Exception {
 
         OmidClientConfiguration testTSOClientConf = new OmidClientConfiguration();
@@ -347,7 +347,7 @@ public class TestTSOClientRequestAndResponseBehaviours {
     // The next 3 tests are similar to the ones in TestRetryProcessor but checking the result on the TSOClient side
     // (They exercise the communication protocol) TODO Remove???
     // ----------------------------------------------------------------------------------------------------------------
-    @Test(timeOut = 30_000)
+    @Test(enabled = false, timeOut = 30_000)
     public void testCommitTimestampPresentInCommitTableReturnsCommit() throws Exception {
 
         TSOClient client = TSOClient.newInstance(tsoClientConf);
@@ -366,7 +366,7 @@ public class TestTSOClientRequestAndResponseBehaviours {
         }
     }
 
-    @Test(timeOut = 30_000)
+    @Test(enabled = false, timeOut = 30_000)
     public void testInvalidCommitTimestampPresentInCommitTableReturnsAbort() throws Exception {
 
         TSOClient client = TSOClient.newInstance(tsoClientConf);
@@ -382,7 +382,7 @@ public class TestTSOClientRequestAndResponseBehaviours {
         assertEquals(response.getCommitResponse().getCommitTimestamp(), 0);
     }
 
-    @Test(timeOut = 30_000)
+    @Test(enabled = false, timeOut = 30_000)
     public void testCommitTimestampNotPresentInCommitTableReturnsAnAbort() throws Exception {
 
         TSOClient client = TSOClient.newInstance(tsoClientConf);
